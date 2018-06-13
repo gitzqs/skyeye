@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>天目互联运营平台</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/layui.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav layui-layout-left">
+            <li class="layui-nav-item"><a href="index.html">首&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
+            <li class="layui-nav-item"><a href="dataMonitoring-list.html">数据监测</a></li>
+            <li class="layui-nav-item"><a href="service-list.html">服务管理</a></li>
+        </ul>
+        <div class="tianMu-logo"><img src="images/login-logo.png"><span id="current-time"></span></div>
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item"><a href="report-tab.html">报表统计</a></li>
+            <li class="layui-nav-item"><a href="recharge-lis.html">远程充值</a></li>
+            <li class="layui-nav-item layui-this"><a href="system-setting.html">系统设置</a></li>
+        </ul>
+        <ul class="layui-nav user-bar">
+            <li class="layui-nav-item user-bar-item">
+                <a href="javascript:;">超级管理员</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="javascript:;">修改密码</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item user-bar-item">
+                <a href="login.html">退出</a>
+            </li>
+        </ul>
+    </div>
+    <div class="layui-mainBady layui-border-box">
+        <div class="report-block">
+            <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+                <ul class="layui-tab-title">
+                    <li class="layui-this">账户管理</li>
+                    <li>报警推送</li>
+                    <li>客户上线</li>
+                    <li>规格管理</li>
+                </ul>
+                <div class="layui-tab-content layui-border-box">
+                    <div class="layui-tab-item layui-show">
+                        <div class="layui-form layui-border-box table-box onlyTable">
+                            <div class="layui-table-body tableBox-main layui-table layui-border-box">
+                                <table class="layui-table tm-table" lay-size="sm" cellspacing="0" cellpadding="0"
+                                       border="0">
+                                    <thead>
+                                    <tr>
+                                        <th>手机号</th>
+                                        <th>联系人</th>
+                                        <th>角色</th>
+                                        <th>权限</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>浙江花旗新能源有限公司</td>
+                                        <td>张三</td>
+                                        <td>员工</td>
+                                        <td>全部客户</td>
+                                        <td>
+                                            <a href="setting-account.html"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn">
+                                                维护
+                                            </a>
+                                            <button class="layui-btn layui-btn-primary layui-btn-small tm-btn-danger">
+                                                删除
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>浙江花旗新能源有限公司</td>
+                                        <td>张三</td>
+                                        <td>员工</td>
+                                        <td>全部客户</td>
+                                        <td>
+                                            <a href="setting-account.html"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn">
+                                                维护
+                                            </a>
+                                            <button class="layui-btn layui-btn-primary layui-btn-small tm-btn-danger">
+                                                删除
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>浙江花旗新能源有限公司</td>
+                                        <td>张三</td>
+                                        <td>员工</td>
+                                        <td>全部客户</td>
+                                        <td>
+                                            <a href="setting-account.html"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn">
+                                                维护
+                                            </a>
+                                            <button class="layui-btn layui-btn-primary layui-btn-small tm-btn-danger">
+                                                删除
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>浙江花旗新能源有限公司</td>
+                                        <td>张三</td>
+                                        <td>员工</td>
+                                        <td>全部客户</td>
+                                        <td>
+                                            <a href="setting-account.html"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn">
+                                                维护
+                                            </a>
+                                            <button class="layui-btn layui-btn-primary layui-btn-small tm-btn-danger">
+                                                删除
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>浙江花旗新能源有限公司</td>
+                                        <td>张三</td>
+                                        <td>员工</td>
+                                        <td>全部客户</td>
+                                        <td>
+                                            <a href="setting-account.html"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn">
+                                                维护
+                                            </a>
+                                            <button class="layui-btn layui-btn-primary layui-btn-small tm-btn-danger">
+                                                删除
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>浙江花旗新能源有限公司</td>
+                                        <td>张三</td>
+                                        <td>员工</td>
+                                        <td>全部客户</td>
+                                        <td>
+                                            <a href="setting-account.html"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn">
+                                                维护
+                                            </a>
+                                            <button class="layui-btn layui-btn-primary layui-btn-small tm-btn-danger">
+                                                删除
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>浙江花旗新能源有限公司</td>
+                                        <td>张三</td>
+                                        <td>员工</td>
+                                        <td>全部客户</td>
+                                        <td>
+                                            <a href="setting-account.html"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn">
+                                                维护
+                                            </a>
+                                            <button class="layui-btn layui-btn-primary layui-btn-small tm-btn-danger">
+                                                删除
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>浙江花旗新能源有限公司</td>
+                                        <td>张三</td>
+                                        <td>员工</td>
+                                        <td>全部客户</td>
+                                        <td>
+                                            <a href="setting-account.html"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn">
+                                                维护
+                                            </a>
+                                            <button class="layui-btn layui-btn-primary layui-btn-small tm-btn-danger">
+                                                删除
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>浙江花旗新能源有限公司</td>
+                                        <td>张三</td>
+                                        <td>员工</td>
+                                        <td>全部客户</td>
+                                        <td>
+                                            <a href="setting-account.html"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn">
+                                                维护
+                                            </a>
+                                            <button class="layui-btn layui-btn-primary layui-btn-small tm-btn-danger">
+                                                删除
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>浙江花旗新能源有限公司</td>
+                                        <td>张三</td>
+                                        <td>员工</td>
+                                        <td>全部客户</td>
+                                        <td>
+                                            <a href="setting-account.html"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn">
+                                                维护
+                                            </a>
+                                            <button class="layui-btn layui-btn-primary layui-btn-small tm-btn-danger">
+                                                删除
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="layui-table-tool tableBox-footer">
+                                <div id="page"></div>
+                            </div>
+                        </div>
+                        <div class="formBoxFooter-setting layui-clear">
+                            <div class="footer-left"></div>
+                            <div class="footer-right"><a href="setting-account-add.html" class="layui-btn layui-btn-warm recharge-btn">新增账户</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-tab-item">
+                        <div class="search-bar">
+                            <form id="form-companySearch" name="form-companySearch">
+                                <div class="typeahead__container">
+                                    <div class="typeahead__field">
+                                        <span class="typeahead__query">
+                                            <input class="js-typeahead" name="companySearch" type="search"
+                                                   placeholder="请输入客户名称"
+                                                   autocomplete="off">
+                                        </span>
+                                        <span class="typeahead__button">
+                                            <button type="submit">
+                                                全站搜索
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="layui-form layui-border-box table-box search-results">
+                            <div class="layui-table-body tableBox-main layui-table layui-border-box">
+                                <table class="layui-table tm-table" lay-size="sm" cellspacing="0" cellpadding="0"
+                                       border="0">
+                                    <thead>
+                                    <tr>
+                                        <th>模块名称</th>
+                                        <th>最低限</th>
+                                        <th>最高限</th>
+                                        <th>推送方式</th>
+                                        <th>推送人</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>气体体积</td>
+                                        <td>550</td>
+                                        <td>1200</td>
+                                        <td>app</td>
+                                        <td>
+                                            <select lay-ignore class="tm-select">
+                                                <option>赵启明</option>
+                                                <option>李四</option>
+                                            </select>
+                                        </td>
+                                        <td><a href="setting-alarm-set.html"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn">报警设置</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>气体体积</td>
+                                        <td>550</td>
+                                        <td>1200</td>
+                                        <td>app</td>
+                                        <td>
+                                            <select lay-ignore class="tm-select">
+                                                <option>赵启明</option>
+                                                <option>李四</option>
+                                            </select>
+                                        </td>
+                                        <td><a href="setting-alarm-set.html"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn">报警设置</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>气体体积</td>
+                                        <td>550</td>
+                                        <td>1200</td>
+                                        <td>app</td>
+                                        <td>
+                                            <select lay-ignore class="tm-select">
+                                                <option>赵启明</option>
+                                                <option>李四</option>
+                                            </select>
+                                        </td>
+                                        <td><a href="setting-alarm-set.html"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn">报警设置</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>气体体积</td>
+                                        <td>550</td>
+                                        <td>1200</td>
+                                        <td>app</td>
+                                        <td>
+                                            <select lay-ignore class="tm-select">
+                                                <option>赵启明</option>
+                                                <option>李四</option>
+                                            </select>
+                                        </td>
+                                        <td><a href="setting-alarm-set.html"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn">报警设置</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>气体体积</td>
+                                        <td>550</td>
+                                        <td>1200</td>
+                                        <td>app</td>
+                                        <td>
+                                            <select lay-ignore class="tm-select">
+                                                <option>赵启明</option>
+                                                <option>李四</option>
+                                            </select>
+                                        </td>
+                                        <td><a href="setting-alarm-set.html"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn">报警设置</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>气体体积</td>
+                                        <td>550</td>
+                                        <td>1200</td>
+                                        <td>app</td>
+                                        <td>
+                                            <select lay-ignore class="tm-select">
+                                                <option>赵启明</option>
+                                                <option>李四</option>
+                                            </select>
+                                        </td>
+                                        <td><a href="setting-alarm-set.html"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn">报警设置</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>气体体积</td>
+                                        <td>550</td>
+                                        <td>1200</td>
+                                        <td>app</td>
+                                        <td>
+                                            <select lay-ignore class="tm-select">
+                                                <option>赵启明</option>
+                                                <option>李四</option>
+                                            </select>
+                                        </td>
+                                        <td><a href="setting-alarm-set.html"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn">报警设置</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>气体体积</td>
+                                        <td>550</td>
+                                        <td>1200</td>
+                                        <td>app</td>
+                                        <td>
+                                            <select lay-ignore class="tm-select">
+                                                <option>赵启明</option>
+                                                <option>李四</option>
+                                            </select>
+                                        </td>
+                                        <td><a href="setting-alarm-set.html"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn">报警设置</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>气体体积</td>
+                                        <td>550</td>
+                                        <td>1200</td>
+                                        <td>app</td>
+                                        <td>
+                                            <select lay-ignore class="tm-select">
+                                                <option>赵启明</option>
+                                                <option>李四</option>
+                                            </select>
+                                        </td>
+                                        <td><a href="setting-alarm-set.html"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn">报警设置</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>气体体积</td>
+                                        <td>550</td>
+                                        <td>1200</td>
+                                        <td>app</td>
+                                        <td>
+                                            <select lay-ignore class="tm-select">
+                                                <option>赵启明</option>
+                                                <option>李四</option>
+                                            </select>
+                                        </td>
+                                        <td><a href="setting-alarm-set.html"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn">报警设置</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>气体体积</td>
+                                        <td>550</td>
+                                        <td>1200</td>
+                                        <td>app</td>
+                                        <td>
+                                            <select lay-ignore class="tm-select">
+                                                <option>赵启明</option>
+                                                <option>李四</option>
+                                            </select>
+                                        </td>
+                                        <td><a href="setting-alarm-set.html"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn">报警设置</a></td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="layui-table-tool tableBox-footer">
+                                <div id="page2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-tab-item">
+                        <div class="layui-form layui-border-box table-box onlyTable">
+                            <div class="layui-table-body tableBox-main layui-table layui-border-box">
+                                <table class="layui-table tm-table" lay-size="sm" cellspacing="0" cellpadding="0"
+                                       border="0">
+                                    <thead>
+                                    <tr>
+                                        <th>客户名称</th>
+                                        <th>设备ID</th>
+                                        <th>客户地址</th>
+                                        <th>联系人</th>
+                                        <th>联系方式</th>
+                                        <th>上线时间</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>浙江花旗新能源有限公司</td>
+                                        <td>TMD9526</td>
+                                        <td>张家港市杨舍镇</td>
+                                        <td>赵启平</td>
+                                        <td>18600000000</td>
+                                        <td>2017-11-07 12:12:12</td>
+                                        <td>
+                                            <a href="setting-customer-add.html"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn">
+                                                维护
+                                            </a>
+                                            <a class="layui-btn layui-btn-primary layui-btn-small tm-btn-warm" href="setting-add-from.html">
+                                                新增规格
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>浙江花旗新能源有限公司</td>
+                                        <td>TMD9526</td>
+                                        <td>张家港市杨舍镇</td>
+                                        <td>赵启平</td>
+                                        <td>18600000000</td>
+                                        <td>2017-11-07 12:12:12</td>
+                                        <td>
+                                            <a href="setting-customer-add.html"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn">
+                                                维护
+                                            </a>
+                                            <a class="layui-btn layui-btn-primary layui-btn-small tm-btn-warm" href="setting-add-from.html">
+                                                新增规格
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>浙江花旗新能源有限公司</td>
+                                        <td>TMD9526</td>
+                                        <td>张家港市杨舍镇</td>
+                                        <td>赵启平</td>
+                                        <td>18600000000</td>
+                                        <td>2017-11-07 12:12:12</td>
+                                        <td>
+                                            <a href="setting-customer-add.html"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn">
+                                                维护
+                                            </a>
+                                            <a class="layui-btn layui-btn-primary layui-btn-small tm-btn-warm" href="setting-add-from.html">
+                                                新增规格
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>浙江花旗新能源有限公司</td>
+                                        <td>TMD9526</td>
+                                        <td>张家港市杨舍镇</td>
+                                        <td>赵启平</td>
+                                        <td>18600000000</td>
+                                        <td>2017-11-07 12:12:12</td>
+                                        <td>
+                                            <a href="setting-customer-add.html"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn">
+                                                维护
+                                            </a>
+                                            <a class="layui-btn layui-btn-primary layui-btn-small tm-btn-warm" href="setting-add-from.html">
+                                                新增规格
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>浙江花旗新能源有限公司</td>
+                                        <td>TMD9526</td>
+                                        <td>张家港市杨舍镇</td>
+                                        <td>赵启平</td>
+                                        <td>18600000000</td>
+                                        <td>2017-11-07 12:12:12</td>
+                                        <td>
+                                            <a href="setting-customer-add.html"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn">
+                                                维护
+                                            </a>
+                                            <a class="layui-btn layui-btn-primary layui-btn-small tm-btn-warm" href="setting-add-from.html">
+                                                新增规格
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>浙江花旗新能源有限公司</td>
+                                        <td>TMD9526</td>
+                                        <td>张家港市杨舍镇</td>
+                                        <td>赵启平</td>
+                                        <td>18600000000</td>
+                                        <td>2017-11-07 12:12:12</td>
+                                        <td>
+                                            <a href="setting-customer-add.html"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn">
+                                                维护
+                                            </a>
+                                            <a class="layui-btn layui-btn-primary layui-btn-small tm-btn-warm" href="setting-add-from.html">
+                                                新增规格
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>浙江花旗新能源有限公司</td>
+                                        <td>TMD9526</td>
+                                        <td>张家港市杨舍镇</td>
+                                        <td>赵启平</td>
+                                        <td>18600000000</td>
+                                        <td>2017-11-07 12:12:12</td>
+                                        <td>
+                                            <a href="setting-customer-add.html"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn">
+                                                维护
+                                            </a>
+                                            <a class="layui-btn layui-btn-primary layui-btn-small tm-btn-warm" href="setting-add-from.html">
+                                                新增规格
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>浙江花旗新能源有限公司</td>
+                                        <td>TMD9526</td>
+                                        <td>张家港市杨舍镇</td>
+                                        <td>赵启平</td>
+                                        <td>18600000000</td>
+                                        <td>2017-11-07 12:12:12</td>
+                                        <td>
+                                            <a href="setting-customer-add.html"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn">
+                                                维护
+                                            </a>
+                                            <a class="layui-btn layui-btn-primary layui-btn-small tm-btn-warm" href="setting-add-from.html">
+                                                新增规格
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>浙江花旗新能源有限公司</td>
+                                        <td>TMD9526</td>
+                                        <td>张家港市杨舍镇</td>
+                                        <td>赵启平</td>
+                                        <td>18600000000</td>
+                                        <td>2017-11-07 12:12:12</td>
+                                        <td>
+                                            <a href="setting-customer-add.html"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn">
+                                                维护
+                                            </a>
+                                            <a class="layui-btn layui-btn-primary layui-btn-small tm-btn-warm" href="setting-add-from.html">
+                                                新增规格
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>浙江花旗新能源有限公司</td>
+                                        <td>TMD9526</td>
+                                        <td>张家港市杨舍镇</td>
+                                        <td>赵启平</td>
+                                        <td>18600000000</td>
+                                        <td>2017-11-07 12:12:12</td>
+                                        <td>
+                                            <a href="setting-customer-add.html"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn">
+                                                维护
+                                            </a>
+                                            <a class="layui-btn layui-btn-primary layui-btn-small tm-btn-warm" href="setting-add-from.html">
+                                                新增规格
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>浙江花旗新能源有限公司</td>
+                                        <td>TMD9526</td>
+                                        <td>张家港市杨舍镇</td>
+                                        <td>赵启平</td>
+                                        <td>18600000000</td>
+                                        <td>2017-11-07 12:12:12</td>
+                                        <td>
+                                            <a href="setting-customer-add.html"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn">
+                                                维护
+                                            </a>
+                                            <a class="layui-btn layui-btn-primary layui-btn-small tm-btn-warm" href="setting-add-from.html">
+                                                新增规格
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>浙江花旗新能源有限公司</td>
+                                        <td>TMD9526</td>
+                                        <td>张家港市杨舍镇</td>
+                                        <td>赵启平</td>
+                                        <td>18600000000</td>
+                                        <td>2017-11-07 12:12:12</td>
+                                        <td>
+                                            <a href="setting-customer-add.html"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn">
+                                                维护
+                                            </a>
+                                            <a class="layui-btn layui-btn-primary layui-btn-small tm-btn-warm" href="setting-add-from.html">
+                                                新增规格
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>浙江花旗新能源有限公司</td>
+                                        <td>TMD9526</td>
+                                        <td>张家港市杨舍镇</td>
+                                        <td>赵启平</td>
+                                        <td>18600000000</td>
+                                        <td>2017-11-07 12:12:12</td>
+                                        <td>
+                                            <a href="setting-customer-add.html"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn">
+                                                维护
+                                            </a>
+                                            <a class="layui-btn layui-btn-primary layui-btn-small tm-btn-warm" href="setting-add-from.html">
+                                                新增规格
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="layui-table-tool tableBox-footer">
+                                <div id="page3"></div>
+                            </div>
+                        </div>
+                        <div class="formBoxFooter-setting layui-clear">
+                            <div class="footer-left"></div>
+                            <div class="footer-right"><a href="customer-add-from.html"
+                                                         class="layui-btn layui-btn-warm recharge-btn">新增客户</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-tab-item">
+                        <div class="layui-form layui-border-box table-box tableNoBar">
+                            <div class="layui-table-body tableBox-main layui-table layui-border-box">
+                                <table class="layui-table tm-table" lay-size="sm" cellspacing="0" cellpadding="0"
+                                       border="0">
+                                    <thead>
+                                    <tr>
+                                        <th>客户名称</th>
+                                        <th>储罐规格</th>
+                                        <th>储罐编号</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>浙江花旗新能源有限公司</td>
+                                        <td>60立方米卧灌</td>
+                                        <td>TMD9526</td>
+                                        <td><a href="#"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn checkBtn">
+                                            查看
+                                        </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>浙江花旗新能源有限公司</td>
+                                        <td>60立方米卧灌</td>
+                                        <td>TMD9526</td>
+                                        <td><a href="#"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn checkBtn">
+                                            查看
+                                        </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>浙江花旗新能源有限公司</td>
+                                        <td>60立方米卧灌</td>
+                                        <td>TMD9526</td>
+                                        <td><a href="#"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn checkBtn">
+                                            查看
+                                        </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>浙江花旗新能源有限公司</td>
+                                        <td>60立方米卧灌</td>
+                                        <td>TMD9526</td>
+                                        <td><a href="#"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn checkBtn">
+                                            查看
+                                        </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>浙江花旗新能源有限公司</td>
+                                        <td>60立方米卧灌</td>
+                                        <td>TMD9526</td>
+                                        <td><a href="#"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn checkBtn">
+                                            查看
+                                        </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>浙江花旗新能源有限公司</td>
+                                        <td>60立方米卧灌</td>
+                                        <td>TMD9526</td>
+                                        <td><a href="#"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn checkBtn">
+                                            查看
+                                        </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>浙江花旗新能源有限公司</td>
+                                        <td>60立方米卧灌</td>
+                                        <td>TMD9526</td>
+                                        <td><a href="#"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn checkBtn">
+                                            查看
+                                        </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>浙江花旗新能源有限公司</td>
+                                        <td>60立方米卧灌</td>
+                                        <td>TMD9526</td>
+                                        <td><a href="#"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn checkBtn">
+                                            查看
+                                        </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>浙江花旗新能源有限公司</td>
+                                        <td>60立方米卧灌</td>
+                                        <td>TMD9526</td>
+                                        <td><a href="#"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn checkBtn">
+                                            查看
+                                        </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>浙江花旗新能源有限公司</td>
+                                        <td>60立方米卧灌</td>
+                                        <td>TMD9526</td>
+                                        <td><a href="#"
+                                               class="layui-btn layui-btn-primary layui-btn-small tm-btn checkBtn">
+                                            查看
+                                        </a></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="layui-table-tool tableBox-footer">
+                                <div id="page4"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-->
+<div class="export-panel hide" style="display: none;" id="checkPanel">
+    <div class="export-panel-title" style="cursor: move;">液位对照表</div>
+    <div class="export-panel-content">
+        <div class="company-name layui-clear"></div>
+        <div class="recharge-content">
+            <table class="layui-table tm-table checkPanel-table" lay-size="sm" cellspacing="0" cellpadding="0" border="0">
+                <thead>
+                <tr>
+                    <th>质量</th>
+                    <th>体积</th>
+                    <th>液位</th>
+                    <th>容积</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>555</td>
+                    <td>555</td>
+                    <td>555</td>
+                    <td>555</td>
+                    <td><a href="" class="tm-btn-common">删除</a></td>
+                </tr>
+                <tr>
+                    <td>555</td>
+                    <td>555</td>
+                    <td>555</td>
+                    <td>555</td>
+                    <td><a href="" class="tm-btn-common">删除</a></td>
+                </tr>
+                <tr>
+                    <td>555</td>
+                    <td>555</td>
+                    <td>555</td>
+                    <td>555</td>
+                    <td><a href="" class="tm-btn-common">删除</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="export-btn">
+            <a href="setting-add-from.html"
+               class="layui-btn layui-btn-primary layui-btn-small tm-btn tm-btn-warm">
+                新增一行
+            </a><a class="layui-btn layui-btn-warm layui-btn-small">确&nbsp;&nbsp;&nbsp;定</a>
+        </div>
+    </div>
+</div>
+<!--end 弹窗-->
+<script src="js/jquery.min.js"></script>
+<script src="layui.js"></script>
+<script src="js/jquery.typeahead.js"></script>
+<script src="js/skyEye.js"></script>
+<script>
+    layui.use('element', function () {
+        var element = layui.element;
+        element.render('nav');
+    });
+    $('.checkBtn').on('click', function () {
+        layui.use('layer', function () {
+            var layer = layui.layer;
+            layer.open({
+                type: 1,
+                title: false,
+                closeBtn:1,
+                area: '516px',
+                shadeClose: true,
+                content: $('#checkPanel'),
+            });
+        });
+    });
+    layui.use(['laypage', 'layer'], function () {
+        var laypage = layui.laypage
+            , layer = layui.layer;
+        //完整功能
+        laypage.render({
+            elem: 'page'
+            , count: 100
+            , layout: ['count', 'prev', 'page', 'next', 'skip']
+            , first: '首页'
+            , last: '尾页'
+            , jump: function (obj) {
+                console.log(obj)
+            }
+        });
+        laypage.render({
+            elem: 'page2'
+            , count: 100
+            , layout: ['count', 'prev', 'page', 'next', 'skip']
+            , first: '首页'
+            , last: '尾页'
+            , jump: function (obj) {
+                console.log(obj)
+            }
+        });
+        laypage.render({
+            elem: 'page3'
+            , count: 100
+            , layout: ['count', 'prev', 'page', 'next', 'skip']
+            , first: '首页'
+            , last: '尾页'
+            , jump: function (obj) {
+                console.log(obj)
+            }
+        });
+        laypage.render({
+            elem: 'page4'
+            , count: 100
+            , layout: ['count', 'prev', 'page', 'next', 'skip']
+            , first: '首页'
+            , last: '尾页'
+            , jump: function (obj) {
+                console.log(obj)
+            }
+        });
+    });
+    initTypeahead();
+</script>
+</body>
+</html>

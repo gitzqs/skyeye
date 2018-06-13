@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>天目互联运营平台</title>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="css/layui.css">
+<link rel="stylesheet" href="css/style.css">
+
+<style type="text/css">
+/* 隐藏百度地图logo */
+.anchorBL {
+	display: none;
+}
+
+#talkbubble {
+	height: 20px;
+	background: #F30D6D;
+	position: relative;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	color: #fff;
+	line-height: 20px;
+	text-align: center;
+	font-size: 8px;
+}
+
+#talkbubble:before {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 17px;
+	width: 0;
+	height: 0;
+	border-right: 3px solid transparent;
+	border-top: 6px solid #F30D6D;
+	border-left: 3px solid transparent;
+}
+</style>
+</head>
+<body class="layui-layout-body">
+	<div class="layui-layout layui-layout-admin">
+		<div class="layui-header">
+			<ul class="layui-nav layui-layout-left">
+				<li class="layui-nav-item  layui-this"><a href="index.html">首&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
+				<li class="layui-nav-item"><a href="dataMonitoring-list.html">数据监测</a></li>
+				<li class="layui-nav-item"><a href="service-list.html">服务管理</a></li>
+
+			</ul>
+			<div class="tianMu-logo">
+				<img src="images/login-logo.png"><span id="current-time"></span>
+			</div>
+			<ul class="layui-nav layui-layout-right">
+				<li class="layui-nav-item"><a href="report-tab.html">报表统计</a></li>
+				<li class="layui-nav-item"><a href="recharge-lis.html">远程充值</a></li>
+				<li class="layui-nav-item"><a href="system-setting.html">系统设置</a></li>
+
+			</ul>
+			<ul class="layui-nav user-bar">
+				<li class="layui-nav-item user-bar-item"><a href="#">超级管理员</a>
+					<dl class="layui-nav-child">
+						<dd>
+							<a href="#" id="password">修改密码</a>
+						</dd>
+					</dl></li>
+				<li class="layui-nav-item user-bar-item"><a href="login.html">退出</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="layui-side">
+			<div class="layui-panel">
+				<!-- <div class="block-title">客户统计</div> -->
+
+				<div id="sxtj"
+					style="border-radius: 4px; position: absolute; right: 185px; top: 5px; color: #F9AA73; z-index: 10000; background: #fff; cursor: pointer; width: 70px; text-align: center; height: 30px; line-height: 30px;">上线统计</div>
+				<div id="shoucang"
+					style="border-radius: 4px; position: absolute; right: 5px; top: 5px; color: #F9AA73; z-index: 10000; background: #fff; cursor: pointer; width: 70px; text-align: center; height: 30px; line-height: 30px;">线路列表</div>
+				<div id="gxbz"
+					style="border-radius: 4px; position: absolute; right: 95px; top: 5px; color: #F9AA73; z-index: 10000; background: #fff; cursor: pointer; width: 70px; text-align: center; height: 30px; line-height: 30px;">管线标注</div>
+				<ul id="shoucangUl"
+					style="background: #666666; opacity: 0.8; border-radius: 4px; position: absolute; right: 185px; top: -30px; z-index: 10000; color: #ffff;">
+				</ul>
+				<div id="map" class="chartBlock layui-border-box">
+					<!-- <div class="map-top layui-clear">
+						<div class="map-top-left">
+							<a href="" id="company-name">浙江华气新能源有限公司</a>
+						</div>
+						<div class="map-top-right" id="">
+							<span class="num">0</span> <span class="num">3</span> <span
+								class="num">3</span> <span class="num">3</span>
+						</div>
+					</div> -->
+					<div id="map-wrap" class="mapBlock"></div>
+				</div>
+				<span class="title-line"></span> <span class="radius-leftTop"></span>
+				<span class="radius-rightTop"></span> <span
+					class="radius-leftBottom"></span> <span class="radius-rightBottom"></span>
+			</div>
+		</div>
+
+		<div class="layui-body">
+			<!-- 内容主体区域 -->
+			<div class="panelMin-layout">
+				<div class="layui-panel panelMin">
+					<div class="block-title">用量排名</div>
+					<div class="chartBlock-min layui-border-box">
+						<div id="chartDemo" class="charts layui-border-box"></div>
+					</div>
+					<span class="title-line"></span> <span class="radius-leftTop"></span>
+					<span class="radius-rightTop"></span> <span
+						class="radius-leftBottom"></span> <span class="radius-rightBottom"></span>
+				</div>
+			</div>
+
+			<div class="panelMin-layout">
+				<div class="layui-panel panelTable">
+					<div class="block-title">报警通知</div>
+					<div class="table-block layui-border-box" id="table-cont">
+						<table class="layui-table table-warning indexTable"
+							style="border-collapse: separate; border-spacing: 0px 10px;">
+							<thead>
+								<tr>
+									<th>客服名称</th>
+									<th>模块名称</th>
+									<th>报警描述</th>
+									<th>报警时间</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>浙江华气新能源有限公司</td>
+									<td>储罐液位</td>
+									<td>储液过高</td>
+									<td>2017-10-21 12:12:12</td>
+								</tr>
+								<tr>
+									<td>浙江华气新能源有限公司</td>
+									<td>储罐液位</td>
+									<td>储液过高</td>
+									<td>2017-10-21 12:12:12</td>
+								</tr>
+								<tr>
+									<td>浙江华气新能源有限公司</td>
+									<td>储罐液位</td>
+									<td>储液过高</td>
+									<td>2017-10-21 12:12:12</td>
+								</tr>
+								<tr>
+									<td>浙江华气新能源有限公司</td>
+									<td>储罐液位</td>
+									<td>储液过高</td>
+									<td>2017-10-21 12:12:12</td>
+								</tr>
+								<tr>
+									<td>浙江华气新能源有限公司</td>
+									<td>储罐液位</td>
+									<td>储液过高</td>
+									<td>2017-10-21 12:12:12</td>
+								</tr>
+								<tr>
+									<td>浙江华气新能源有限公司</td>
+									<td>储罐液位</td>
+									<td>储液过高</td>
+									<td>2017-10-21 12:12:12</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<span class="title-line"></span> <span class="radius-leftTop"></span>
+					<span class="radius-rightTop"></span> <span
+						class="radius-leftBottom"></span> <span class="radius-rightBottom"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--弹窗-->
+	<div class="export-panel hide" style="display: none;"
+		id="changePassword">
+		<div class="export-panel-title" style="cursor: move;">修改密码</div>
+		<div class="export-panel-content">
+			<form class="layui-form" action="">
+				<div class="company-name layui-clear"></div>
+				<div class="recharge-content">
+					<form class="layui-form" action="">
+						<div class="form-content recharge-confirm">
+							<div class="layui-form-item">
+								<label class="layui-form-label">旧密码</label>
+								<div class="layui-input-inline">
+									<input type="text" name="password" required
+										lay-verify="required" placeholder="请输入旧密码" autocomplete="off"
+										class="layui-input">
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label">新密码</label>
+								<div class="layui-input-inline">
+									<input type="text" name="password" required
+										lay-verify="required" placeholder="请输入新密码" autocomplete="off"
+										class="layui-input">
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label">确认密码</label>
+								<div class="layui-input-inline">
+									<input type="text" name="password" required
+										lay-verify="required" placeholder="请再次输入新密码"
+										autocomplete="off" class="layui-input">
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="export-btn">
+					<button class="layui-btn layui-btn-warm">确&nbsp;&nbsp;&nbsp;定</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<!--end 弹窗-->
+	<script src="js/jquery.min.js"></script>
+	<script src="layui.js"></script>
+	<script src="js/echarts.min.js"></script>
+	<!-- <script src="js/map/china.js"></script>
+<script src="js/skyEye.js"></script> -->
+	<script>
+
+		layui.use('element', function() {
+			var element = layui.element;
+			element.render('nav');
+		});
+		$('#password').on('click', function() {
+			layui.use('layer', function() {
+				var layer = layui.layer;
+				layer.open({
+					type : 1,
+					title : false,
+					closeBtn : 1,
+					area : '516px',
+					shadeClose : true,
+					content : $('#changePassword'),
+				});
+			});
+		});
+		demoMap();
+		demoChartBar();
+	</script>
+
+
+	<!-- <script type="text/javascript"
+		src="http://api.map.baidu.com/getscript?v=3.0&ak=iEK6Uy37TfDGZ77wRNBCsUdKZuX6wr4c&services=&t=20171212143337"></script> -->
+	<script type="text/javascript" src="./js/map/baidu/getscript.js"></script>
+	<!-- baiduMapStyle.js在baidu.js之前调用 -->
+	<script type="text/javascript" src="js/map/baidu/baiduMapStyle.js"></script>
+	<script type="text/javascript"
+		src="http://api.map.baidu.com/library/DrawingManager/1.4/src/DrawingManager.js"></script>
+	<script type="text/javascript" src="js/map/baidu/baidu.js"></script>
+</body>
+</html>

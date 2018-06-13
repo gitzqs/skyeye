@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>天目互联运营平台</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/layui.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="login-page">
+    <div class="layui-container wrapper">
+        <div class="layui-row">
+            <div class="login-header">
+                <div class="header-left"><img src="images/login-lines.png"/></div>
+                <img src="images/login-logo.png" class="header-logo"/>
+                <div class="header-right"><img src="images/login-lines.png"/></div>
+            </div>
+            <div id="wrapper" class="login-content">
+                <div id="login_form" class="login-block">
+                    <span class="code-span"><a href="javascript:;" id="qrQode"><img src="images/Qr-code.png" height="60" width="60"/></a></span>
+                    <!--<form class="register-form">
+                        <input type="text" placeholder="用户名" id="r_user_name" class="user"/>
+                        <input type="password" placeholder="密码" id="r_password"class="password"/>
+                        <p class="message">已经有了一个账户? <a href="#">去登录</a></p>
+                        <div class="login-btn"><button id="create">下一步</button></div>
+                    </form>-->
+                    <form class="login-form">
+                        <input type="text" placeholder=用户名" id="user_name" class="user"/>
+                        <input type="password" placeholder="密码" id="password" class="password"/>
+                        <p class="message"><a href="#" id="forgetPassword">忘记密码？</a></p>
+                        <div class="login-btn"><button id="login">登　录</button></div>
+                    </form>
+                </div>
+            </div>
+            <div class="login-footer">
+                <div class="footer-left"><img src="images/login-lines2.png"/></div>
+                天目互联(江苏)有限公司
+                <div class="footer-right"><img src="images/login-lines2.png"/></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-->
+<div class="export-panel hide" style="display: none;" id="getPassword">
+    <div class="export-panel-title" style="cursor: move;">忘记密码</div>
+    <div class="export-panel-content">
+        <form class="layui-form" action="">
+            <div class="company-name layui-clear"></div>
+            <div class="recharge-content">
+                <form class="layui-form" action="">
+                    <div class="form-content recharge-confirm">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">手机号</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="password" required lay-verify="required" placeholder="请输入手机号" autocomplete="off" class="layui-input">
+                            </div>
+                            <div class="layui-form-mid error-info">手机号不存在</div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">短信验证码</label>
+                            <div class="layui-input-inline verification-code">
+                                <input type="text" name="password" required lay-verify="required"
+                                       placeholder="请输入验证码" autocomplete="off" class="layui-input">
+                                <button class="layui-btn layui-btn-normal">发送验证码</button>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">新密码</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="password" required lay-verify="required"
+                                       placeholder="请输入新密码" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">确认密码</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="password" required lay-verify="required"
+                                       placeholder="请再次输入新密码" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="export-btn">
+                <button class="layui-btn layui-btn-warm">确&nbsp;&nbsp;&nbsp;定</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!--end 弹窗-->
+<div id="code" class="hide" style="display: none;"><img src="images/Qr-code.png"></div>
+<script src="js/jquery.min.js"></script>
+<script src="layui.js"></script>
+<script type="text/javascript">
+    $('#qrQode').on('click', function(){
+        layui.use('layer', function(){
+            var layer = layui.layer;
+            layer.open({
+                type: 1,
+                title: false,
+                closeBtn: 0,
+                area: '80px',
+                shadeClose: true,
+                content: $('#code'),
+            });
+        });
+    });
+    $('#forgetPassword').on('click', function(){
+        layui.use('layer', function(){
+            var layer = layui.layer;
+            layer.open({
+                type: 1,
+                title: false,
+                closeBtn:1,
+                area: '516px',
+                shadeClose: true,
+                content: $('#getPassword'),
+            });
+        });
+    });
+    $(function(){
+        $("#create").click(function(){
+            check_register();
+            return false;
+        });
+        $("#login").click(function(){
+            check_login();
+            return false;
+        });
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+1. 三方表sedev.third_device_detail  sedev.third_user_usage_info
+   里面的数据应该是定时写入的，截止到2018-05-04 23:05:00 里面的third_user_usage_info 里面还没有发现数据
+
+2. 如何使用三方表sedev.third_device_detail  sedev.third_user_usage_info
+主要是界面展现的细节
+
+[build]:
+pom.xml->Run as --> Maven install :
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building skyeye Maven Webapp 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ skyeye ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ skyeye ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 103 source files to D:\STS_workspace\skyeye\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ skyeye ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory D:\STS_workspace\skyeye\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ skyeye ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ skyeye ---
+[INFO] 
+[INFO] --- maven-war-plugin:2.6:war (default-war) @ skyeye ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [skyeye] in [D:\STS_workspace\skyeye\target\ROOT]
+[INFO] Processing war project
+[INFO] Copying webapp resources [D:\STS_workspace\skyeye\src\main\webapp]
+[INFO] Webapp assembled in [4865 msecs]
+[INFO] Building war: D:\STS_workspace\skyeye\target\ROOT.war
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ skyeye ---
+[INFO] Installing D:\STS_workspace\skyeye\target\ROOT.war to E:\wangyq\maven_repsitory\com\skyeye\0.0.1-SNAPSHOT\skyeye-0.0.1-SNAPSHOT.war
+[INFO] Installing D:\STS_workspace\skyeye\pom.xml to E:\wangyq\maven_repsitory\com\skyeye\0.0.1-SNAPSHOT\skyeye-0.0.1-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 18.525 s
+[INFO] Finished at: 2018-05-04T23:30:21+08:00
+[INFO] Final Memory: 16M/152M
+[INFO] ------------------------------------------------------------------------
+
+[user login]
+for tomcat:
+	http://localhost:8080/user/loginInit
+	
+for STS:
+	http://localhost:80/user/loginInit
+[admin login]
+http://localhost/manage
+更换图片：
+new:indexTop-bg.png old: indexTop-bg_.png
+new:login-bg.png	old: login-bg_.png
+new:login-logo.png  old: login-logo_.png
+禁止所有JSP页面里面的login-logo.png
+<img src="${resources}/images/login-logo.png">
+
+下面的代码应该保存到一个公共的jsp文件里面，然后各个jsp引用这个公共文件
+<c:set var="resources" value="${pageContext.request.contextPath}/resources" />
+<c:set var="application" value="${pageContext.request.contextPath}" />
+
+当以后涉及到一些需要增加全局变量在界面展示的时候，可以直接在这个文件中进行修改
